@@ -1,0 +1,43 @@
+body {
+	width: 95%;
+}
+.page_title {
+	background-color: rgba(2, 71, 0, 0.8);
+	padding: 5px;
+}
+
+.page_title_header {
+	color: #FFFFFF;
+}
+
+.page_title_image {
+	float: right;
+}
+
+.two_column_content_one {
+	width: 70%;
+	float: left;
+}
+
+.two_column_content_one p {
+	color: #717a71;
+	line-height: 200%;
+	margin: 10px;
+}
+
+.two_column_content_two {
+	width: 20%;
+	float: left;
+	margin-left: 40px;
+}
+
+.two_column_content_two h3 {
+	background-color: rgba(2, 71, 0, 0.8);
+	padding: 4px;
+	color: #FFFFFF;
+	text-align: center;
+}
+
+input {
+	border: 1px solid #024700;
+}
