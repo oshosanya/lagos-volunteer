@@ -65,6 +65,7 @@ return 'Your message has been sent';
 
 });
 
+Route::post('/search', array('uses' => 'SearchController@executeSearch'));
 /*Database Routing*/
 
 ?>

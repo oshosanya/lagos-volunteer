@@ -1,0 +1,5 @@
+<?php
+
+class Volunteering_post extends \Eloquent {
+	protected $fillable = [];
+}

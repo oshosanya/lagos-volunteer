@@ -4,8 +4,7 @@
 	"keywords": ["framework", "laravel"],
 	"license": "MIT",
 	"require": {
-		"laravel/framework": "4.2.*",
-		"xethron/migrations-generator": "^1.2"
+		"laravel/framework": "4.2.*"
 	},
 	"require-dev": {
     		"xethron/migrations-generator": "dev-master"
