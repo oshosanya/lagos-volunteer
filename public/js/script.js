@@ -13,7 +13,7 @@ function loginuser() {
 		{username: username, password: password}, function(markup) 
 			{
 				if(markup == 'loggedin') {
-					window.location.assign('http://localhost:8000/portal');
+					window.location.assign('/portal');
 				}else{
 				$('#errorlog').html(markup);
 			}
