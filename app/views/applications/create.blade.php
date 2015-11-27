@@ -1,6 +1,7 @@
 @extends('layout')
 @section('scripts')
 <script type="text/javascript" src="{{ asset('js/search.js') }}"></script>
+@stop
 @section('content')
 {{ Form::open(array('action' => 'ApplicationController@show')) }}
 

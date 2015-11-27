@@ -12,14 +12,14 @@
         </tr>
     </thead>
     <tbody>
-    @foreach($applications as $key => $value)
+    @foreach($applications as $application)
         <tr>
-            <td>{{ $value->id }}</td>
-            <td>{{ $value->company_name }}</td>
-            <td>{{ $value->post_name }}</td>
-            <td>{{ $value->status }}</td>
-            <td>{{ $value->start_date }}</td>
-            <td>{{ $value->end_date }}</td>
+            <td>{{ $application->id }}</td>
+            <td>{{ $application->company_name }}</td>
+            <td>{{ $application->post_name }}</td>
+            <td>{{ $application->status }}</td>
+            <td>{{ $application->start_date }}</td>
+            <td>{{ $application->end_date }}</td>
 
             <!-- we will also add show, edit, and delete buttons -->
             <td>
@@ -28,10 +28,14 @@
                 <!-- we will add this later since its a little more complicated than the other two buttons -->
 
                 <!-- show the nerd (uses the show method found at GET /nerds/{id} -->
-                <a class="btn btn-small btn-success" href="{{ URL::to('applications/' . $value->id) }}">Show this Application</a>
+                <div class="btn-group">
+                <a class="btn btn-small btn-success" href="{{ URL::to('applications/' . $application->id) }}">Show</a>
 
                 <!-- edit this nerd (uses the edit method found at GET /nerds/{id}/edit -->
-                <a class="btn btn-small btn-info" href="{{ URL::to('applications/' . $value->id . '/edit') }}">Edit this Application</a>
+                <a class="btn btn-small btn-info" href="{{ URL::to('applications/' . $application->id . '/edit') }}">Edit</a>
+                
+                <a class="btn btn-small btn-danger" href="{{ URL::to('applications/' . $application->id . '/delete') }}">Cancel</a>
+                </div>
 
             </td>
         </tr>

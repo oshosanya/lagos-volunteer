@@ -1,5 +1,7 @@
 body {
-	width: 95%;
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
 }
 .page_title {
 	background-color: rgba(2, 71, 0, 0.8);
@@ -38,13 +40,49 @@ body {
 	text-align: center;
 }
 
-input {
-	border: 1px solid #024700;
-}
+
 
 #post {
 	width: 60%;
 	margin-left: auto;
 	margin-right: auto;
 	margin-top: 50px;
+}
+
+.c-form {
+	margin-top: 5%;
+	margin-left: 5%;
+}
+
+.horizontal {
+	margin-right: 5px;
+}
+
+.side-content {
+	float: right;
+	margin-right: 5%;
+	margin-top: 30px;
+}
+
+.main-content {
+	float: left;
+}
+
+.image-label {
+	position: absolute;
+	top: 330px;
+	left: 20px;
+	z-index: 10;
+}
+
+.image-label a {
+	font-size: 25px;
+	background-color: green;
+	border-radius: 3px;
+	padding: 3px;
+	color: #f01d1d;
+}
+
+.image-label {
+	color: green;
 }

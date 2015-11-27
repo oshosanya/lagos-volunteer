@@ -5003,7 +5003,7 @@ a.tag {
   display: block;
   width: 100%;
   position: relative;
-  background-color: #0072c6;
+  background-color: #399830;
   color: #ffffff;
   height: 3.125rem;
   -webkit-user-select: none;
@@ -5781,7 +5781,7 @@ a.tag {
 }
 .v-menu li:hover {
   text-decoration: none;
-  background: #59cde2;
+  background: #f01d1d;
 }
 .v-menu li:hover > a,
 .v-menu li:hover .icon {
@@ -5826,7 +5826,7 @@ a.tag {
   top: -10%;
 }
 .v-menu .menu-title {
-  background-color: #f6f7f8;
+  background-color: #cce0f4;
   font-size: 12px;
   line-height: 14px;
   padding: 4px 8px;

@@ -23,8 +23,13 @@ Route::get('/contact', function(){
  return View::make('contact');
 });
 
-Route::get('/portal', function(){
- return View::make('portal');
+/*Route::get('/register', function(){
+	return View::make('register');
+});*/
+
+Route::get('/test', function(){
+ $id = Auth::id();
+ return $id;
 });
 
 Route::get('user/{id}', function($id){
@@ -33,39 +38,11 @@ Route::get('user/{id}', function($id){
 
 //Resource Controllers
 Route::resource('applications', 'ApplicationController');
-/*Form submission*/
-
-Route::post('contact', function()
-{
-$data = Input::all();
-$rules = array(
-'subject' => 'required',
-'message' => 'required'
-);
-$validator = Validator::make($data, $rules);
-
-if($validator->fails()) {
-return Redirect::to('contact')->withErrors($validator)->withInput();
-}
-
-return 'Your message has been sent';
-
-$emailcontent = array (
-'subject' => $data['subject'],
-'emailmessage' => $data['message']
-);
-
-Mail::send('emails.contactemail', $emailcontent, function($message)
-{
-$message->to('michaeloshosanya@gmail.com','Lagos Volunteer')
-->subject('Contact via Our Contact Form');
-});
-
-return 'Your message has been sent';
-
-});
-
 Route::post('/search', array('uses' => 'SearchController@executeSearch'));
-/*Database Routing*/
+Route::resource('login', 'UserController');
+Route::resource('portal', 'PortalController');
+Route::post('/authuser', array('uses' => 'UserController@loginUser'));
+Route::post('/authuser/check', array('uses' => 'UserController@checkLogin'));
+
 
 ?>

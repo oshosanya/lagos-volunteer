@@ -9,9 +9,9 @@ class ApplicationController extends \BaseController {
 	 */
 	public function index()
 	{
-		$applications = Application::all();
-
-        // load the view and pass the nerds
+		$id = Auth::id();
+		$applications = Application::Where('user_id', '=', $id)->get();
+		// load the view and pass the nerds
         return View::make('applications.index')
             ->with('applications', $applications);
 	}
@@ -35,7 +35,7 @@ class ApplicationController extends \BaseController {
 	 */
 	public function store()
 	{
-		//
+		
 	}
 
 
@@ -47,7 +47,10 @@ class ApplicationController extends \BaseController {
 	 */
 	public function show($id)
 	{
-		//
+		$application = Application::find($id);
+		return View::make('applications.show')
+			->with('application', $application);
+
 	}
 
 
@@ -83,7 +86,7 @@ class ApplicationController extends \BaseController {
 	 */
 	public function destroy($id)
 	{
-		//
+
 	}
 
 	

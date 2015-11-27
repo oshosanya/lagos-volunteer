@@ -5,7 +5,7 @@
 	"license": "MIT",
 	"require": {
 		"laravel/framework": "4.2.*",
-		"torann/geoip": "0.2.*@dev"
+		"torann/geoip": "0.1.*@dev"
 
 	},
 	"require-dev": {
