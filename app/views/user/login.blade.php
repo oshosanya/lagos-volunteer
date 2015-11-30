@@ -2,11 +2,11 @@
 @section('script')
 <script type="text/javascript">
 	jQuery(document).ready(function() {
-		$.post('http://localhost:8000/authuser/check', 
+		$.post('/authuser/check', 
 		{check: 'check'}, function(markup) 
 			{
 				if(markup == 'loggedin') {
-					window.location.assign('http://localhost:8000');
+					window.location.assign('/');
 				}
 			});
 	});
