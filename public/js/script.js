@@ -9,7 +9,7 @@ var email_test = rgx_email.exec(email);
 
 function loginuser() {
 	
-	$.post('http://localhost:8000/authuser', 
+	$.post('/authuser', 
 		{username: username, password: password}, function(markup) 
 			{
 				if(markup == 'loggedin') {
