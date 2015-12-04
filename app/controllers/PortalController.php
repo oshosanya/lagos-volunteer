@@ -10,8 +10,10 @@ class PortalController extends \BaseController {
 	public function index()
 	{
 		// load the view and pass the nerds
+
 		$location = GeoIP::getLocation();
-        return View::make('portal.index')->with('location', $location);
+		$volunteeringposts = Volunteeringpost::Where('location_state', '=', $location['city'])->get();
+        return View::make('portal.index')->with('volunteeringposts', $volunteeringposts);
 	}
 
 

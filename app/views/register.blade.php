@@ -61,7 +61,6 @@
 </div>
 </div>
 </div>
-<div class="row flex-just-left">
 <div class="cell colspan3 horizontal">
 <div class="input-control password full-size">
 <label>Confirm Password:</label>

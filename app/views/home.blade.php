@@ -1,4 +1,7 @@
 @extends('layout')
+@section('title')
+<title>LAG Volunteer</title>
+@stop
 @section('content')
 <div id="top-banner">
 <img src="{{ asset('images/homebanner.jpg') }}" />

@@ -28,12 +28,17 @@ Route::get('/contact', function(){
 });*/
 
 Route::get('/test', function(){
- $id = Auth::id();
- return $id;
+ $password = Hash::make('oshosanya1997');
+ return $password;
 });
 
-Route::get('user/{id}', function($id){
- return "User #$id";
+Route::get('/profile', array('uses' => 'UserController@show'));
+
+Route::get('applications/show/{id}', array('uses' => 'ApplicationController@showVolunteeringPosts'));
+
+Route::get('/logout', function(){
+ Auth::logout();
+ return View::make('home');
 });
 
 //Resource Controllers
@@ -43,6 +48,7 @@ Route::resource('login', 'UserController');
 Route::resource('portal', 'PortalController');
 Route::post('/authuser', array('uses' => 'UserController@loginUser'));
 Route::post('/authuser/check', array('uses' => 'UserController@checkLogin'));
+Route::post('/applications/apply', array('uses' => 'ApplicationController@applyVolunteeringPost'));
 
 
 ?>

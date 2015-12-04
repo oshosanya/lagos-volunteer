@@ -45,15 +45,45 @@ class ApplicationController extends \BaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function show($id)
+	public function showVolunteeringPosts($id)
 	{
-		$application = Application::find($id);
+		$volunteeringpost = Volunteeringpost::find($id);
 		return View::make('applications.show')
-			->with('application', $application);
+			->with('volunteeringpost', $volunteeringpost);
 
 	}
 
+	public function applyVolunteeringPost()
+	{	
 
+		
+		$dup = Application::Where(function($query)
+			{	
+				$appid = Input::get('appid');
+				$id = Auth::id();
+				$query->where('user_id', '=', $id)
+					  ->where('post_id', '=', $appid);
+					})->get();
+		if($dup == '[]') {
+		$appid = Input::get('appid');
+		$id = Auth::id();
+		$volunteeringposts = Volunteeringpost::Where('id', '=', $appid)->get();
+		$application = new Application;
+		foreach ($volunteeringposts as $volunteeringpost) {
+		$application->user_id = $id;
+		$application->post_id = $appid;
+		$application->job_title = $volunteeringpost->job_title;
+		$application->organization_name = $volunteeringpost->organization_name;
+		$application->status = $volunteeringpost->status;
+		$application->start_date = $volunteeringpost->start_date;
+		$application->end_date = $volunteeringpost->end_date;
+		$application->save();
+		return 'applied';
+	}
+}else{
+		return 'exists';
+	}
+}
 	/**
 	 * Show the form for editing the specified resource.
 	 *
